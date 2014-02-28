@@ -4,8 +4,9 @@
  */
 package michaelfouche.warrantymanager.config;
 
-import michaelfouche.warrantymanager.encapsulation.Impl.encapsulationImpl;
-import michaelfouche.warrantymanager.encapsulation.encapsulation;
+
+import michaelfouche.warrantymanager.encapsulation.user;
+import michaelfouche.warrantymanager.encapsulation.userImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -15,9 +16,9 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class appConfig {
-    @Bean(name = "calc")
-            public encapsulation GetService()
+    @Bean(name = "userEncapsulation")
+            public user GetService()
             {
-                return new encapsulationImpl();
+                return new userImpl();
             }
 }

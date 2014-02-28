@@ -8,6 +8,9 @@ package michaelfouche.warrantymanager.encapsulation;
  *
  * @author foosh
  */
-public interface encapsulation {
-    int add(int a, int b);
+public interface user {
+
+    String getLastName();
+
+    void setLastName(String lname);
 }
