@@ -10,6 +10,8 @@ import michaelfouche.warrantymanager.inheritance.product;
 import michaelfouche.warrantymanager.inheritance.retailer;
 import michaelfouche.warrantymanager.polymorphism.repair;
 import michaelfouche.warrantymanager.polymorphism.replace;
+import michaelfouche.warrantymanager.srp.correction.warrantyDifValid;
+import michaelfouche.warrantymanager.srp.correction.warrantyDifference;
 import michaelfouche.warrantymanager.srp.violation.Impl.warrantyValid;
 
 import org.springframework.context.ApplicationContext;
@@ -34,6 +36,8 @@ public class WarrantyManagerTest {
     public static replace replaceService;
     public static repair repairService;
     public static warrantyValid diffDayValidService;
+    public static warrantyDifference warrantyDifferenceService;
+    public static warrantyDifValid warrantyDifValidService;
     public WarrantyManagerTest() {
     }
     // TODO add test methods here.
@@ -99,6 +103,20 @@ public class WarrantyManagerTest {
         Assert.assertFalse(diffDayValidService.amountDaysValid("13 01 1997","23 01 1997",9));  
     }
     
+    @Test 
+    public void warrantyDifference() {        
+        Assert.assertEquals(warrantyDifferenceService.amountDays("13 01 1997","23 01 1997"),10);  
+    }    
+    @Test 
+    public void warrantyDifValidFalse() {        
+        Assert.assertFalse(warrantyDifValidService.amountValid(15,10));  //Is 15 smaller than 10
+    }
+    @Test 
+    public void warrantyDifValidTrue() {        
+        Assert.assertTrue(warrantyDifValidService.amountValid(10,15));  //Is 10 smaller than 15
+    }
+    
+    
     
     
     
@@ -111,6 +129,8 @@ public class WarrantyManagerTest {
         replaceService = (replace)ctx.getBean("warrantyReplacePolymorphism");
         repairService = (repair)ctx.getBean("warrantyRepairPolymorphism");
         diffDayValidService= (warrantyValid)ctx.getBean("daysDifferenceValid");
+        warrantyDifferenceService= (warrantyDifference)ctx.getBean("daysDifference");
+        warrantyDifValidService= (warrantyDifValid)ctx.getBean("warrantyValid");
     }
 
     @AfterClass

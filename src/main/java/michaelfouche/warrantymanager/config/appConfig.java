@@ -15,6 +15,10 @@ import michaelfouche.warrantymanager.polymorphism.Impl.repairImpl;
 import michaelfouche.warrantymanager.polymorphism.Impl.replaceImpl;
 import michaelfouche.warrantymanager.polymorphism.repair;
 import michaelfouche.warrantymanager.polymorphism.replace;
+import michaelfouche.warrantymanager.srp.correction.Impl.warrantyDifValidImpl;
+import michaelfouche.warrantymanager.srp.correction.Impl.warrantyDifferenceImpl;
+import michaelfouche.warrantymanager.srp.correction.warrantyDifValid;
+import michaelfouche.warrantymanager.srp.correction.warrantyDifference;
 import michaelfouche.warrantymanager.srp.violation.Impl.warrantyValid;
 import michaelfouche.warrantymanager.srp.violation.Impl.warrantyValidImpl;
 import org.springframework.context.annotation.Bean;
@@ -55,5 +59,15 @@ public class appConfig {
             public warrantyValid GetServiceDaysDiffValid() 
             {
                 return new warrantyValidImpl();
+            }
+    @Bean(name = "daysDifference")
+            public warrantyDifference GetServiceDaysDiff() 
+            {
+                return new warrantyDifferenceImpl();
+            }
+    @Bean(name = "warrantyValid")
+            public warrantyDifValid GetServiceDaysValid() 
+            {
+                return new warrantyDifValidImpl();
             }
 }
