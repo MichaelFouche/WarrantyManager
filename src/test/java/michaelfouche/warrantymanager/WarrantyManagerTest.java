@@ -63,18 +63,18 @@ public class WarrantyManagerTest {
     }
     @Test 
     public void productRetailName() {
-        productService.productImplAssign("", "", "", "", "Vodacom", "", "");
-        Assert.assertEquals(retailerService.getRetailName(),"Vodacom");        
+        productService.productImplAssign(".", ".", ".", ".", "Vodacom", ".", ".");
+        Assert.assertEquals(productService.toString(),"....Vodacom..");        
     }
     @Test 
     public void productRetailCity() {
-        productService.productImplAssign("", "", "", "", "", "Cape Town", "");
-        Assert.assertEquals(retailerService.getRetailName(),"Cape Town");        
+        productService.productImplAssign(".", ".", ".", ".", ".", "Cape Town", ".");
+        Assert.assertEquals(productService.toString(),".....Cape Town.");        
     }
     @Test 
     public void productRetailProvince() {
-        productService.productImplAssign("", "", "", "", "", "", "Western Cape");
-        Assert.assertEquals(retailerService.getRetailName(),"Western Cape");  
+        productService.productImplAssign(".", ".", ".", ".", ".", ".", "Western Cape");
+        Assert.assertEquals(productService.toString(),"......Western Cape");  
     }
     
     

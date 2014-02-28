@@ -10,7 +10,7 @@ package michaelfouche.warrantymanager.inheritance;
  * @author foosh
  */
 public interface product {
-    void productImplAssign(String m, String s, String man, String pd, String rn, String rc, String rp);
+    void productImplAssign(String m, String s, String man, String pd, String rn, String rc, String rp);    
     void setModel(String model);
     void setSN(String sn);
     void setManufacturer(String manufacturer);
@@ -20,4 +20,5 @@ public interface product {
     String getSN();
     String getManufacturer();
     String getPurchaseDate();
+    String toString();
 }
