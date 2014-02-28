@@ -2,7 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package michaelfouche.warrantymanager.encapsulation;
+package michaelfouche.warrantymanager.encapsulation.Impl;
+
+import michaelfouche.warrantymanager.encapsulation.user;
 
 /**
  *
