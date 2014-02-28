@@ -4,6 +4,10 @@
  */
 package michaelfouche.warrantymanager;
 
+import michaelfouche.warrantymanager.config.appConfig;
+import michaelfouche.warrantymanager.encapsulation.encapsulation;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -16,6 +20,7 @@ import org.testng.annotations.BeforeMethod;
  */
 public class WarrantyManagerTest {
     
+    public static encapsulation encapService;
     public WarrantyManagerTest() {
     }
     // TODO add test methods here.
@@ -26,6 +31,8 @@ public class WarrantyManagerTest {
 
     @BeforeClass
     public static void setUpClass() throws Exception {
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(appConfig.class);
+        encapService = (encapsulation)ctx.getBean("calc");
     }
 
     @AfterClass
