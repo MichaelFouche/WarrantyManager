@@ -14,22 +14,33 @@ public class productImpl extends retailerImpl implements product {
     String model = "";
     String sn= "";
     String manufacturer= "";
-    String purchaseDate= "";    
-    String placeOfPurchase= "";
+    String purchaseDate= ""; 
+    public productImpl()
+    {
+        
+    }
+    
+    public void productImplAssign(String m, String s, String man, String pd, String rn, String rc, String rp){
+        model = m;
+        sn = s;
+        manufacturer = man;
+        purchaseDate = pd;
+        retailName = rn;
+        retailCity = rc;
+        retailProvince = rp;
+    }
+            
     public void setModel(String m){
         model = m;
     }            
     public void setSN(String s){
         sn =s;
     }
-    public void setManufacturer(String m){
-        manufacturer = m;
+    public void setManufacturer(String man){
+        manufacturer = man;
     }
     public void setPurchaseDate(String pd){
         purchaseDate = pd;
-    }
-    public void setPlaceOfPurchase(String pop){
-        placeOfPurchase = pop;
     }
     
     public String getModel(){
@@ -43,9 +54,6 @@ public class productImpl extends retailerImpl implements product {
     }
     public String getPurchaseDate(){
         return purchaseDate;
-    }
-    public String getPlaceOfPurchase(){
-        return placeOfPurchase;
     }
     
 }

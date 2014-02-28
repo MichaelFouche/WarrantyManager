@@ -4,20 +4,20 @@
  */
 package michaelfouche.warrantymanager.inheritance;
 
+
 /**
  *
  * @author foosh
  */
 public interface product {
+    void productImplAssign(String m, String s, String man, String pd, String rn, String rc, String rp);
     void setModel(String model);
     void setSN(String sn);
     void setManufacturer(String manufacturer);
     void setPurchaseDate(String purchaseDate);
-    void setPlaceOfPurchase(String placeOfPurchase);
     
     String getModel();
     String getSN();
     String getManufacturer();
     String getPurchaseDate();
-    String getPlaceOfPurchase();
 }
