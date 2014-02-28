@@ -8,11 +8,13 @@ import michaelfouche.warrantymanager.config.appConfig;
 import michaelfouche.warrantymanager.encapsulation.encapsulation;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 /**
  *
@@ -28,7 +30,11 @@ public class WarrantyManagerTest {
     //
     // @Test
     // public void hello() {}
-
+    @Test //1
+    public void add() {
+        Assert.assertEquals(encapService.add(5,2),7);        
+    }
+    
     @BeforeClass
     public static void setUpClass() throws Exception {
         ApplicationContext ctx = new AnnotationConfigApplicationContext(appConfig.class);
