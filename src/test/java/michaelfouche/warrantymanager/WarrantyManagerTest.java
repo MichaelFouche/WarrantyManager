@@ -12,6 +12,8 @@ import michaelfouche.warrantymanager.dip.violation.hardwareToolsPayout;
 import michaelfouche.warrantymanager.encapsulation.user;
 import michaelfouche.warrantymanager.inheritance.product;
 import michaelfouche.warrantymanager.inheritance.retailer;
+import michaelfouche.warrantymanager.lsp.correction.dep;
+import michaelfouche.warrantymanager.lsp.correction.rev;
 import michaelfouche.warrantymanager.lsp.violation.computeWarranty;
 import michaelfouche.warrantymanager.ocp.violation.address;
 import michaelfouche.warrantymanager.polymorphism.repair;
@@ -51,6 +53,9 @@ public class WarrantyManagerTest {
     public static cellphone cellphoneService;
     public static computeWarranty warValueService; 
     public static computeWarranty depreciateService; 
+    public static rev revService;
+    public static dep depService;
+    
     
     public WarrantyManagerTest() {
     }
@@ -167,6 +172,16 @@ public class WarrantyManagerTest {
         
         Assert.assertEquals(depreciateService.depreciateTotal(500), 500.0);
     }
+    @Test
+    public void reviewWarrantyC(){
+        
+        Assert.assertEquals(revService.reviewProduct("cellphone"), 4000.0);
+    }
+    @Test
+    public void depreciateWarrantyC(){
+        
+        Assert.assertEquals(depService.depreciateTotal(500), 500.0);
+    }
     
     
     
@@ -189,6 +204,8 @@ public class WarrantyManagerTest {
         cellphoneService = (cellphone) ctx.getBean("cellphonePayoutC");
         warValueService = (computeWarranty) ctx.getBean("warValue");
         depreciateService = (computeWarranty) ctx.getBean("depreciate");
+        revService = (rev)ctx.getBean("reviewC");
+        depService =(dep)ctx.getBean("depreciateC");
     }
 
     @AfterClass

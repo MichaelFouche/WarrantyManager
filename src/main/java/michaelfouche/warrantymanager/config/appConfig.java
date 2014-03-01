@@ -19,6 +19,10 @@ import michaelfouche.warrantymanager.inheritance.Impl.productImpl;
 import michaelfouche.warrantymanager.inheritance.Impl.retailerImpl;
 import michaelfouche.warrantymanager.inheritance.product;
 import michaelfouche.warrantymanager.inheritance.retailer;
+import michaelfouche.warrantymanager.lsp.correction.dep;
+import michaelfouche.warrantymanager.lsp.correction.depreciateImpl;
+import michaelfouche.warrantymanager.lsp.correction.rev;
+import michaelfouche.warrantymanager.lsp.correction.reviewImpl;
 import michaelfouche.warrantymanager.lsp.violation.computeWarranty;
 import michaelfouche.warrantymanager.lsp.violation.depreciate;
 import michaelfouche.warrantymanager.lsp.violation.warrantyVal;
@@ -118,4 +122,16 @@ public class appConfig {
             {
                 return new depreciate();
             }
+    @Bean(name = "depreciateC")
+            public dep GetServiceDepC() 
+            {
+                return new depreciateImpl();
+            }
+    @Bean(name = "reviewC")
+            public rev GetServiceRevC() 
+            {
+                return new reviewImpl();
+            }
+   
+    
 }
