@@ -10,13 +10,20 @@ import michaelfouche.warrantymanager.dip.violation.hardwareToolsPayout;
  *
  * @author foosh
  */
-public class hardwareToolsPayoutImpl implements hardwareToolsPayout{
+public class hardwareToolsPayoutImpl implements hardwareToolsPayout {
     private double payout;
     
     cellphonePayoutImpl cash1;
+
+    public hardwareToolsPayoutImpl() {
+        cash1 = new cellphonePayoutImpl();
+        cash1.setPayout();
+    }
     
-    public double calculateSalary(cellphonePayoutImpl c){
-        payout=c.getPayout()+2500;
+    
+    public double calculatePayout(){
+        cellphonePayoutImpl c = cash1;
+        payout=c.getPayout()+250;
         return payout;
     }
 }

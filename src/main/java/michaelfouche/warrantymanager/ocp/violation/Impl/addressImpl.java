@@ -4,10 +4,14 @@
  */
 package michaelfouche.warrantymanager.ocp.violation.Impl;
 
+import michaelfouche.warrantymanager.ocp.violation.address;
+
 /**
  *
  * @author foosh
  */
-public class addressImpl {
-    
+public class addressImpl implements address{
+    public void setAddress(){
+        
+    }
 }

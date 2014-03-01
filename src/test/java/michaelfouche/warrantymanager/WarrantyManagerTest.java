@@ -5,9 +5,14 @@
 package michaelfouche.warrantymanager;
 
 import michaelfouche.warrantymanager.config.appConfig;
+import michaelfouche.warrantymanager.dip.correction.cellphone;
+import michaelfouche.warrantymanager.dip.correction.hardwareTools;
+import michaelfouche.warrantymanager.dip.violation.cellphonePayout;
+import michaelfouche.warrantymanager.dip.violation.hardwareToolsPayout;
 import michaelfouche.warrantymanager.encapsulation.user;
 import michaelfouche.warrantymanager.inheritance.product;
 import michaelfouche.warrantymanager.inheritance.retailer;
+import michaelfouche.warrantymanager.ocp.violation.address;
 import michaelfouche.warrantymanager.polymorphism.repair;
 import michaelfouche.warrantymanager.polymorphism.replace;
 import michaelfouche.warrantymanager.srp.correction.warrantyDifValid;
@@ -38,6 +43,12 @@ public class WarrantyManagerTest {
     public static warrantyValid diffDayValidService;
     public static warrantyDifference warrantyDifferenceService;
     public static warrantyDifValid warrantyDifValidService;
+    public static cellphonePayout cellphonePayoutService;
+    public static hardwareToolsPayout hardwareToolsPayoutService;
+    public static address addressService;
+    public static hardwareTools hardwareToolsService;
+    public static cellphone cellphoneService;
+    
     public WarrantyManagerTest() {
     }
     // TODO add test methods here.
@@ -115,7 +126,34 @@ public class WarrantyManagerTest {
     public void warrantyDifValidTrue() {        
         Assert.assertTrue(warrantyDifValidService.amountValid(10,15));  //Is 10 smaller than 15
     }
-    
+    @Test 
+    public void warrantyDiffValidFalse() {        
+        Assert.assertFalse(warrantyDifValidService.amountValid(200,10));  //Is 200 smaller than 10
+    }
+    @Test 
+    public void warrantyDifferenceEqual() {        
+        Assert.assertEquals(warrantyDifferenceService.amountDays("13 01 1998","28 01 1998"),15);  
+    }
+    @Test
+    public void cellphonePayout(){
+        cellphonePayoutService.setPayout();
+        Assert.assertEquals(cellphonePayoutService.getPayout(), 2500.0);
+    }
+    @Test
+    public void hardwareToolsPayout(){
+        
+        Assert.assertEquals(hardwareToolsPayoutService.calculatePayout(), 2750.0);
+    }
+    @Test
+    public void cellphonePayoutC(){
+        cellphonePayoutService.setPayout();
+        Assert.assertEquals(cellphoneService.calculatePayout(), 2500.0);
+    }
+    @Test
+    public void hardwareToolsPayoutC(){
+        
+        Assert.assertEquals(hardwareToolsService.calculatePayout(), 2750.0);
+    }
     
     
     
@@ -131,6 +169,11 @@ public class WarrantyManagerTest {
         diffDayValidService= (warrantyValid)ctx.getBean("daysDifferenceValid");
         warrantyDifferenceService= (warrantyDifference)ctx.getBean("daysDifference");
         warrantyDifValidService= (warrantyDifValid)ctx.getBean("warrantyValid");
+        cellphonePayoutService = (cellphonePayout)ctx.getBean("cellphonePayout");
+        hardwareToolsPayoutService = (hardwareToolsPayout)ctx.getBean("hardwareToolsPayout");
+        addressService = (address)ctx.getBean("address");
+        hardwareToolsService = (hardwareTools)ctx.getBean("hardwareToolsPayoutC");
+        cellphoneService = (cellphone) ctx.getBean("cellphonePayoutC");
     }
 
     @AfterClass

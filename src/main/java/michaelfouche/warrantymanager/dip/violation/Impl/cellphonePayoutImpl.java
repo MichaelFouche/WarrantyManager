@@ -14,7 +14,7 @@ public class cellphonePayoutImpl implements cellphonePayout{
     private double payout;
     
     public void setPayout(){
-        payout=2000;
+        payout=2500;
     }
     public double getPayout(){
         return payout;

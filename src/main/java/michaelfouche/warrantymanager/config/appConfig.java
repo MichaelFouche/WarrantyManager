@@ -5,12 +5,22 @@
 package michaelfouche.warrantymanager.config;
 
 
+import michaelfouche.warrantymanager.dip.correction.Impl.cellphoneImpl;
+import michaelfouche.warrantymanager.dip.correction.Impl.hardwareToolsImpl;
+import michaelfouche.warrantymanager.dip.correction.cellphone;
+import michaelfouche.warrantymanager.dip.correction.hardwareTools;
+import michaelfouche.warrantymanager.dip.violation.Impl.cellphonePayoutImpl;
+import michaelfouche.warrantymanager.dip.violation.Impl.hardwareToolsPayoutImpl;
+import michaelfouche.warrantymanager.dip.violation.cellphonePayout;
+import michaelfouche.warrantymanager.dip.violation.hardwareToolsPayout;
 import michaelfouche.warrantymanager.encapsulation.user;
 import michaelfouche.warrantymanager.encapsulation.Impl.userImpl;
 import michaelfouche.warrantymanager.inheritance.Impl.productImpl;
 import michaelfouche.warrantymanager.inheritance.Impl.retailerImpl;
 import michaelfouche.warrantymanager.inheritance.product;
 import michaelfouche.warrantymanager.inheritance.retailer;
+import michaelfouche.warrantymanager.ocp.violation.Impl.addressImpl;
+import michaelfouche.warrantymanager.ocp.violation.address;
 import michaelfouche.warrantymanager.polymorphism.Impl.repairImpl;
 import michaelfouche.warrantymanager.polymorphism.Impl.replaceImpl;
 import michaelfouche.warrantymanager.polymorphism.repair;
@@ -69,5 +79,30 @@ public class appConfig {
             public warrantyDifValid GetServiceDaysValid() 
             {
                 return new warrantyDifValidImpl();
+            }
+    @Bean(name = "hardwareToolsPayout")
+            public hardwareToolsPayout GetServiceHardwarePayout() 
+            {
+                return new hardwareToolsPayoutImpl();
+            }
+    @Bean(name = "cellphonePayout")
+            public cellphonePayout GetServiceCellphonePayout() 
+            {
+                return new cellphonePayoutImpl();
+            }
+    @Bean(name = "address")
+            public address GetServiceAddress() 
+            {
+                return new addressImpl();
+            }
+    @Bean(name = "hardwareToolsPayoutC")
+            public hardwareTools GetServiceHardwarePayoutC() 
+            {
+                return new hardwareToolsImpl();
+            }
+    @Bean(name = "cellphonePayoutC")
+            public cellphone GetServiceCellphoneC() 
+            {
+                return new cellphoneImpl();
             }
 }

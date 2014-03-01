@@ -11,5 +11,5 @@ import michaelfouche.warrantymanager.dip.violation.Impl.cellphonePayoutImpl;
  * @author foosh
  */
 public interface hardwareToolsPayout {
-    double calculateSalary(cellphonePayoutImpl cash1);
+    double calculatePayout();
 }
