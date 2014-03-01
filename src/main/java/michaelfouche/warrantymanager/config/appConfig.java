@@ -19,6 +19,9 @@ import michaelfouche.warrantymanager.inheritance.Impl.productImpl;
 import michaelfouche.warrantymanager.inheritance.Impl.retailerImpl;
 import michaelfouche.warrantymanager.inheritance.product;
 import michaelfouche.warrantymanager.inheritance.retailer;
+import michaelfouche.warrantymanager.lsp.violation.computeWarranty;
+import michaelfouche.warrantymanager.lsp.violation.depreciate;
+import michaelfouche.warrantymanager.lsp.violation.warrantyVal;
 import michaelfouche.warrantymanager.ocp.violation.Impl.addressImpl;
 import michaelfouche.warrantymanager.ocp.violation.address;
 import michaelfouche.warrantymanager.polymorphism.Impl.repairImpl;
@@ -104,5 +107,15 @@ public class appConfig {
             public cellphone GetServiceCellphoneC() 
             {
                 return new cellphoneImpl();
+            }
+    @Bean(name = "warValue")
+            public computeWarranty GetServiceCompW() 
+            {
+                return new warrantyVal();
+            }
+    @Bean(name = "depreciate")
+            public computeWarranty GetServiceDep() 
+            {
+                return new depreciate();
             }
 }
