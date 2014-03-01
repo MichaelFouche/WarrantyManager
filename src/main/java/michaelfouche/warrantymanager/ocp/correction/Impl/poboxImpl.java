@@ -4,10 +4,12 @@
  */
 package michaelfouche.warrantymanager.ocp.correction.Impl;
 
+import michaelfouche.warrantymanager.ocp.correction.pobox;
+
 /**
  *
  * @author foosh
  */
-public class poboxImpl {
+public class poboxImpl implements pobox{
     
 }

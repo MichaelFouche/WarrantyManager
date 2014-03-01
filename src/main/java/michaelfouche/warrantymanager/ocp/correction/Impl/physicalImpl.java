@@ -4,10 +4,12 @@
  */
 package michaelfouche.warrantymanager.ocp.correction.Impl;
 
+import michaelfouche.warrantymanager.ocp.correction.physical;
+
 /**
  *
  * @author foosh
  */
-public class physicalImpl {
+public class physicalImpl implements physical{
     
 }

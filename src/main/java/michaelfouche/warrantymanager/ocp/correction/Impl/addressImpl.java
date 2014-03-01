@@ -4,10 +4,12 @@
  */
 package michaelfouche.warrantymanager.ocp.correction.Impl;
 
+import michaelfouche.warrantymanager.ocp.correction.address;
+
 /**
  *
  * @author foosh
  */
-public class addressImpl {
+public class addressImpl implements address{
     
 }
